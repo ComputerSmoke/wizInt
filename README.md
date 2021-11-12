@@ -22,6 +22,7 @@ scribe - prints their stat to the console
 Scrolls are defined in archives, files ending in .lor. Import an archive in main.inn with "archive [name]"
 
 Spells:
+
 summon [type] [name] - summons a creature of specified name and type.
 
 give [creature] [scroll] - gives a scroll to a creature.
