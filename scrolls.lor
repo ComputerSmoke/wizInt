@@ -9,3 +9,19 @@ fizzle
 
 scroll bridger
 imprint bob frank
+
+scroll multiply
+summon goblin temp
+fireball temp 99
+fireball temp me
+brew fizzle0 temp
+summon goblin temp
+fireball temp 99
+bleed temp me
+bleed target temp
+kill temp
+
+scroll fizzle0
+imprint them 0
+kill temp
+fizzle

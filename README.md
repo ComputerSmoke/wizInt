@@ -5,7 +5,7 @@ Usage: "python wizInt.py [main file] [optional: input file]
 The language has spells, scrolls, and creatures. Spells are operations defined by the language. Scrolls are a list of spells, to be cast in order. Creatures take an action each tick based on their type.
 
 Creatures have a stat, realm, and scroll. Their stat can be a string or float, naturally you'll keep track of which is which.
-Having certain stats causes some creatures to die. Each tick has an action phase where creatures take primary actions (such as casting), and a reaction phase where creatures suffer effects (such as a goblin dying from having stat 0).
+Having certain stats causes some creatures to die. Each tick has an action phase where creatures take primary actions (such as casting), and a reaction phase where creatures take lower-priority actions (such as a scribe printing to console).
 
 Creature types:
 
@@ -13,7 +13,7 @@ wizard - casts their scroll targeting another creature in the same realm
 
 goblin - dies if stat <= 0
 
-zombie - dies if stat = 0
+zombie - dies if stat == 0
 
 oracle - copies the text of the input file to their stat on creation
 

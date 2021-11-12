@@ -46,14 +46,16 @@ class Goblin(Creature):
     def __init__(self, name):
         super().__init__(name)
         self.faction = "evil"
-    def reel(self):
+    def setStat(self, stat):
+        super().setStat(stat)
         if self.stat <= 0:
             self.die()
 
 class Zombie(Creature):
     def __init__(self, name):
         super().__init__(name)
-    def reel(self):
+    def setStat(self, stat):
+        super().setStat(stat)
         if self.stat == 0:
             self.die()
 
