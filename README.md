@@ -1,4 +1,6 @@
-wizInt is a work-in-progress programming language. wizInt.py is its interpreter.
+wizInt is a work-in-progress programming language. wizInt.py is its interpreter. 
+
+Usage: "python wizInt.py [main file] [optional: input file]
 
 The language has spells, scrolls, and creatures. Spells are operations defined by the language. Scrolls are a list of spells, to be cast in order. Creatures take an action each tick based on their type.
 

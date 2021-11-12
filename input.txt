@@ -1,1 +1,3 @@
-Hello World
+Default input file contents.
+
+How interesting.

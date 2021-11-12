@@ -1,5 +1,15 @@
-mainFile = open("./main.inn", "r")
-fin = open("./input.txt", "r").read()
+import sys
+
+if len(sys.argv) < 2:
+    raise ValueError("Provide path to wizInt file.")
+if len(sys.argv) < 3:
+    inputPath = "./input.txt"
+else:
+    inputPath = sys.argv[2]
+
+
+mainFile = open(sys.argv[1], "r")
+fin = open(inputPath, "r").read()
 
 class Creature:
     def __init__(self, name):

@@ -1,0 +1,7 @@
+archive scrolls
+
+summon scribe bob
+summon goblin delay
+summon wizard joe
+give joe world_ender
+imprint bob Hello_World!
