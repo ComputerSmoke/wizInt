@@ -1,1 +1,1 @@
-wizInt is a work-in-progress programming language.
+wizInt is a work-in-progress programming language. wizInt.py is its interpreter.
