@@ -115,8 +115,6 @@ def nuke():
     raise Nuke
 def fizzle():
     raise Fizzle
-def meld(reciever, sender):
-    creatures[reciever].setStat(creatures[sender].stat)
 
 
 creatures = {
@@ -184,10 +182,6 @@ spells = {
     "fizzle": {
         "args": 0,
         "meta": fizzle
-    },
-    "meld": {
-        "args": 2,
-        "meta": meld
     }
 }
 realms = {
@@ -256,10 +250,12 @@ def cast(cmd, caster, enemy):
 
     value = cmd[2]
     if value == "me":
-        value = creatures[caster].stat
+        value = creatures[caster].name
     elif value == "them":
-        value = creatures[enemy].stat
+        value = creatures[enemy].name
     if args == 2:
+        if value in creatures:
+            value = creatures[value].stat
         spells[spell]["meta"](target, value)
         return
     
