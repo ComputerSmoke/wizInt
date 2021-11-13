@@ -34,7 +34,7 @@ fireball [target] [amount] - reduce target creature's stat by amount.
 
 bleed [target] [amount] - divide target creature's stat by amount.
 
-kill [target] - immedietly kill target creature. (Before reaction phase)
+kill [target] - Kill target creature.
 
 imprint [target] [thought] - Change target's stat to thought. 
 
@@ -49,7 +49,7 @@ brew [spell] [ingredient] - Use a creature to cast a spell. This does not destro
 
 tinker [spell] [ingredient] - Like brew but protected from fizzles.
 
-nuke - a powerful spell that ends all reality at the end of the tick
+nuke - a powerful spell that immedietly ends all reality when cast
 
 fizzle - Cause the current scroll to fail, as well as any parent scrolls that did not protect themselves from fizzles.
 
