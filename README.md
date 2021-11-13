@@ -4,7 +4,7 @@ Usage: "python wizInt.py [main file] [input file, default: input.txt] [output fi
 
 The language has spells, scrolls, and creatures. Spells are operations defined by the language. Scrolls are a list of spells, to be cast in order. Creatures take an action each tick based on their type.
 
-Creatures have a stat, realm, and scroll. Their stat can be a string or float, naturally you'll keep track of which is which.
+Creatures have a stat, realm, and scroll. Stat is stored asa string, but converted to a float for mathematical operations.
 Having certain stats causes some creatures to die. Each tick has an action phase where creatures take primary actions (such as casting), and a reaction phase where creatures take lower-priority actions (such as a scribe printing to console).
 
 Creature types:
