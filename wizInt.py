@@ -241,6 +241,8 @@ def makeCreature(creatureType, name):
         return Scribe(name)
     elif creatureType == "oracle":
         return Oracle(name)
+    elif creatureType == "demon":
+        return Demon(name)
 
 
 

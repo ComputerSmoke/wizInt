@@ -19,6 +19,8 @@ oracle - copies the text of the input file to their stat on creation
 
 scribe - prints their stat to the console
 
+demon - does nothing... or does it?
+
 Scrolls are defined in archives, files ending in .lor. Import an archive in main.inn with "archive [name]"
 
 Spells:
