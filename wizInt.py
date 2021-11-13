@@ -19,7 +19,7 @@ fin = open(inputPath, "r").read()
 class Creature:
     def __init__(self, name):
         self.name = name
-        self.stat = 100
+        self.stat = "100"
         self.scroll = scrolls["none"]
         self.realm = realms["overworld"]
     def findEnemies(self):
@@ -136,6 +136,8 @@ def fizzle():
     raise Fizzle
 def skim(target, thought, start, end):
     creatures[target].setStat(thought[start:end])
+def suggest(target, thought):
+    creatures[target].setStat(thought + creatures[target].stat)
 
 def output(msg):
     if consolePrint:
@@ -213,6 +215,10 @@ spells = {
     "skim": {
         "args": 4,
         "meta": skim
+    },
+    "suggest": {
+        "args": 2,
+        "meta": suggest
     }
 }
 realms = {

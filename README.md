@@ -53,6 +53,8 @@ tinker [spell] [ingredient] - Like brew but protected from fizzles.
 
 skim [target] [string] [start] [end] - Set target's state to substring of string, starting at start (inclusive), and ending at end (exclusive)
 
+suggest [target] [string] - Prepend string to target's state
+
 nuke - a powerful spell that immedietly ends all reality when cast
 
 fizzle - Cause the current scroll to fail, as well as any parent scrolls that did not protect themselves from fizzles.
