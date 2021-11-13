@@ -6,6 +6,11 @@ if len(sys.argv) < 3:
     inputPath = "./input.txt"
 else:
     inputPath = sys.argv[2]
+if len(sys.argv) < 4:
+    consolePrint = True
+else:
+    consolePrint = False
+    outputFile = open(sys.argv[3], "w")
 
 
 mainFile = open(sys.argv[1], "r")
@@ -64,7 +69,7 @@ class Scribe(Creature):
         super().__init__(name)
         self.stat = ""
     def reel(self):
-        print(self.stat.replace("_", " "), end="")
+        output(self.stat.replace("_", " "))
 
 class Oracle(Creature):
     def __init__(self, name):
@@ -104,9 +109,9 @@ def teleport(target, realm):
     realms[realm][target] = creatures[target]
     creatures[target].realm = realms[realm]
 def fireball(target, amount):
-    creatures[target].stat -= maybeNum(amount)
+    creatures[target].setStat(creatures[target].stat - maybeNum(amount))
 def bleed(target, amount):
-    creatures[target].stat /= maybeNum(amount)
+    creatures[target].setStat(creatures[target].stat / maybeNum(amount))
 def kill(target):
     creatures[target].die()
 def imprint(target, thought):
@@ -127,6 +132,12 @@ def nuke():
     raise Nuke
 def fizzle():
     raise Fizzle
+
+def output(msg):
+    if consolePrint:
+        print(msg, end="")
+    else:
+        outputFile.write(msg)
 
 
 creatures = {
