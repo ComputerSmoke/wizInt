@@ -132,6 +132,8 @@ def nuke():
     raise Nuke
 def fizzle():
     raise Fizzle
+def skim(target, thought, start, end):
+    creatures[target].setStat(thought[start:end])
 
 def output(msg):
     if consolePrint:
@@ -205,6 +207,10 @@ spells = {
     "fizzle": {
         "args": 0,
         "meta": fizzle
+    },
+    "skim": {
+        "args": 4,
+        "meta": skim
     }
 }
 realms = {
@@ -251,6 +257,12 @@ def loadArchive(name):
             continue
         scrolls[scrollName].spells.append(cmd)
 
+def replaceMe(caster, enemy, value):
+    if value == "me":
+        return creatures[caster].name
+    elif value == "them":
+        return creatures[enemy].name
+
 def cast(cmd, caster, enemy):
     spell = cmd[0]
     args = spells[spell]["args"]
@@ -258,11 +270,7 @@ def cast(cmd, caster, enemy):
         spells[spell]["meta"]()
         return
 
-    target = cmd[1]
-    if target == "me":
-        target = caster
-    elif target == "them":
-        target = enemy
+    target = replaceMe(caster, enemy, cmd[1])
     if args == 1:
         spells[spell]["meta"](spell, target)
         return
@@ -271,11 +279,7 @@ def cast(cmd, caster, enemy):
         spells[spell]["meta"](caster, enemy, target)
         return
 
-    value = cmd[2]
-    if value == "me":
-        value = creatures[caster].name
-    elif value == "them":
-        value = creatures[enemy].name
+    value = replaceMe(caster, enemy, cmd[2])
     if args == 2:
         if value in creatures:
             value = creatures[value].stat
@@ -285,6 +289,17 @@ def cast(cmd, caster, enemy):
     if args == "c":
         spells[spell]["meta"](value, caster, enemy, target)
         return
+
+    if args == 4:
+        start = replaceMe(caster, enemy, cmd[3])
+        end = replaceMe(caster, enemy, cmd[4])
+        if start in creatures:
+            start = creatures[start].stat
+        if end in creatures:
+            end = creatures[end].stat
+        start = maybeNum(start)
+        end = maybeNum(end)
+        spells[spell]["meta"](enemy, value, start, end)
     
         
 
