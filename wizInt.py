@@ -50,11 +50,13 @@ class Wizard(Creature):
 class Goblin(Creature):
     def __init__(self, name):
         super().__init__(name)
-        self.faction = "evil"
     def setStat(self, stat):
         super().setStat(stat)
         if maybeNum(self.stat) <= 0:
             self.die()
+class Demon(Creature):
+    def __init__(self, name):
+        super().__init__(name)
 
 class Zombie(Creature):
     def __init__(self, name):
