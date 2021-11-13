@@ -37,7 +37,7 @@ class Creature:
         del creatures[self.name]
         del self.realm[self.name]
     def setStat(self, stat):
-        self.stat = maybeNum(stat)
+        self.stat = "" + stat
 
 class Wizard(Creature):
     def __init__(self, name):
@@ -53,7 +53,7 @@ class Goblin(Creature):
         self.faction = "evil"
     def setStat(self, stat):
         super().setStat(stat)
-        if self.stat <= 0:
+        if maybeNum(self.stat) <= 0:
             self.die()
 
 class Zombie(Creature):
@@ -61,7 +61,7 @@ class Zombie(Creature):
         super().__init__(name)
     def setStat(self, stat):
         super().setStat(stat)
-        if self.stat == 0:
+        if maybeNum(self.stat) == 0:
             self.die()
 
 class Scribe(Creature):
@@ -109,9 +109,9 @@ def teleport(target, realm):
     realms[realm][target] = creatures[target]
     creatures[target].realm = realms[realm]
 def fireball(target, amount):
-    creatures[target].setStat(creatures[target].stat - maybeNum(amount))
+    creatures[target].setStat(maybeNum(creatures[target].stat) - maybeNum(amount))
 def bleed(target, amount):
-    creatures[target].setStat(creatures[target].stat / maybeNum(amount))
+    creatures[target].setStat(maybeNum(creatures[target].stat) / maybeNum(amount))
 def kill(target):
     creatures[target].die()
 def imprint(target, thought):
