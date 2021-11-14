@@ -77,6 +77,13 @@ class Oracle(Creature):
     def __init__(self, name):
         super().__init__(name)
         self.stat = fin
+class Ghost(Creature):
+    def __init__(self, name):
+        super().__init__(name)
+    def setStat(self, stat):
+        super().setStat(stat)
+        if self.stat == "":
+            self.die()
 
 class Scroll:
     def __init__(self, name, spells):
@@ -255,6 +262,8 @@ def makeCreature(creatureType, name):
         return Oracle(name)
     elif creatureType == "demon":
         return Demon(name)
+    elif creatureType == "ghost":
+        return Ghost(name)
 
 
 

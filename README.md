@@ -21,6 +21,8 @@ scribe - prints their stat to the console
 
 demon - does nothing... or does it?
 
+ghost - dies when stat is the empty string
+
 Scrolls are defined in archives, files ending in .lor. Import an archive in main.inn with "archive [name]"
 
 Spells:
