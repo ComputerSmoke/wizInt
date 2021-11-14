@@ -53,7 +53,9 @@ tinker [spell] [ingredient] - Like brew but protected from fizzles.
 
 skim [target] [string] [start] [end] - Set target's state to substring of string, starting at start (inclusive), and ending at end (exclusive)
 
-suggest [target] [string] - Prepend string to target's state
+suggest [target] [string] - Prepend string to target's stat
+
+wipe [target] [number] - Remove number of characters from start of creature's stat
 
 nuke - a powerful spell that immedietly ends all reality when cast
 

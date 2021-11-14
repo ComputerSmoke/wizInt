@@ -138,6 +138,8 @@ def skim(target, thought, start, end):
     creatures[target].setStat(thought[start:end])
 def suggest(target, thought):
     creatures[target].setStat(thought + creatures[target].stat)
+def wipe(target, num):
+    creatures[target].setStat(creatures[target].stat[num:])
 
 def output(msg):
     if consolePrint:
@@ -219,6 +221,10 @@ spells = {
     "suggest": {
         "args": 2,
         "meta": suggest
+    },
+    "wipe": {
+        "args": 1,
+        "meta": wipe
     }
 }
 realms = {
